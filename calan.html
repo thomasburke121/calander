@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<!-- Add an additional blue button style -->
+<style>
+
+th{
+  border-style: solid;
+}
+td{
+  border-style: solid;
+  text-align: center;
+  padding: 20px;
+}
+#ja h1{
+  color: green;
+
+
+}
+#fj h1{
+  color: green;
+
+
+}
+#em{
+color: green;
+
+}
+#preform{
+color: purple;
+
+}
+#his{
+color: yellow;
+
+}
+#filler{
+  color: maroon;
+
+}
+
+
+
+</style>
+<body onload="montha()">
+  <select id="month" onchange="montha()">
+
+    <option value="Jan">Jan</option>
+    <option value="Feb">Feb</option>
+    <option value="Mar">Mar</option>
+    <option value="Apr">Apr</option>
+    <option value="May">May</option>
+    <option value="Jun">Jun</option>
+    <option value="Jul">Jul</option>
+    <option value="Aug">Aug</option>
+    <option value="Sept">Sept</option>
+    <option value="Oct">Oct</option>
+    <option value="Nov">Nov</option>
+    <option value="Dec">Dec</option>
+  </select>
+  <div id="Month">
+  </div>
+<table>
+<tr>
+  <th>Monday</th>
+  <th>Tuseday</th>
+  <th>Wensday</th>
+  <th>Thursay</th>
+  <th>Friday</th>
+  <th>Satarday</th>
+  <th>Sunday</th>
+</tr>
+<tr>
+ 
+  <td><div id="d1">1</div></td>
+  <td><div id="d2">2</div></td>
+  <td><div id="d3">3</div></td>
+  <td><div id="d4">4</div></td>
+  <td><div id="d5">5</div></td>
+  <td><div id="d6">6</div></td>
+  <td><div id="d7">7</div></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>9</td>
+  <td>10</td>
+  <td>11</td>
+  <td>12</td>
+  <td>13</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td>16</td>
+  <td>17</td>
+  <td>18</td>
+  <td>19</td>
+  <td>20</td>
+  <td>21</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>23</td>
+  <td>24</td>
+  <td>25</td>
+  <td>26</td>
+  <td>27</td>
+  <td>28</td>
+</tr>
+<tr>
+  <td>29</td>
+  <td><div id="extrad1">30</div></td>
+  <td><div id="extrad2">31</div></td>
+</tr>
+
+</table>
+<div id="event1">
+</div>
+ <div id="event2"></div>
+<script>
+
+function montha(){
+document.getElementById("event1").innerHTML="";
+document.getElementById("event2").innerHTML="";
+  var x=document.getElementsByTagName("td");
+
+  var musice="<div id="+"em"+"><h1>Music</h1><br>"+"<div id="+"musici"+"></div></div>";
+  var prefom="<div id="+"preform"+"><h1>Preformance</h1><br>"+"<div id="+"preformi"+"></div></div>";
+  var history="<div id="+"his"+"><h1>History</h1><br>"+"<div id="+"historyi"+"></div></div>";
+  var fill="<div id="+"filler"+"><h1>Filler</h1><br>"+"<div id="+"filli"+"></div></div>";
+  
+  //--------------------------------------------
+  // Whats inputed into the fields
+var musici1 ="<img src="+"img1"+"><p>info1</p>";
+var musici2 ="<img src="+"img1"+"><p>info2</p>";
+var musici3 ="<img src="+"img1"+"><p>info3</p>";
+
+var filli ="<img src="+"img1"+"><p>info3</p>";
+
+var prefomi1 ="<img src="+"img1"+"><p>info</p>";
+var prefomi2 ="<img src="+"img1"+"><p>info</p>";
+
+var historyi ="<img src="+"img1"+"><p>info</p>";
+//-------------------------------------------------
+  for (var i = 0; i < x.length; ++i) {
+
+    x[i].style.backgroundColor="white";
+
+  }
+  var sel = document.getElementById("month");
+var montht= sel.options[sel.selectedIndex].text;
+var count = 29;
+var i =0;
+
+var title ="<h1>"+montht+"<h1>";
+document.getElementById("Month").innerHTML=title;
+var ex1 = document.getElementById("extrad1");
+var ex2 = document.getElementById("extrad2");
+
+var x=document.getElementsByTagName("td");
+var Ja = document.getElementById("ja");
+if(montht=="Jan"||montht=="Mar"||montht=="May"||montht=="Jul"||montht=="Aug"||montht=="Oct"||montht=="Dec"){
+  ex1.style.display="block";
+ ex2.style.display="block";
+}
+else if(montht="Feb"){
+ ex1.style.display="none";
+ ex2.style.display="none";
+}
+else if(montht=="Apr"||montht=="Jun"||montht=="Sept"||montht=="Nov"){
+  ex1.style.display="block";
+}
+//event shower
+if(montht=="Jan"||montht=="Aug"){
+
+for (var i = 0; i < x.length; ++i) {
+
+   if(i==8){
+    x[i].style.backgroundColor="green";
+  }
+  if(i==5){
+  x[i].style.backgroundColor="purple";
+}
+}
+document.getElementById("event1").innerHTML=musice;
+document.getElementById("musici").innerHTML=musici1;
+document.getElementById("event2").innerHTML=prefom;
+document.getElementById("preformi").innerHTML=prefomi1;
+
+}
+
+else if(montht=="Feb"||montht=="Jun"){
+ 
+
+
+for (var i = 0; i < x.length; ++i) {
+if(i==5){
+  x[i].style.backgroundColor="yellow";
+}
+else if(i==7){
+  x[i].style.backgroundColor="green";
+}
+}
+document.getElementById("event2").innerHTML=history;
+document.getElementById("historyi").innerHTML=historyi;
+document.getElementById("event1").innerHTML=musice;
+document.getElementById("musici").innerHTML=musici2;
+}
+ else if(montht=="Jul"||montht=="May"){
+ 
+
+
+for (var i = 0; i < x.length; ++i) {
+if(i==13){
+  x[i].style.backgroundColor="purple";
+}
+else if(i==29){
+  x[i].style.backgroundColor="green";
+}
+}
+document.getElementById("event2").innerHTML=prefom;
+document.getElementById("preformi").innerHTML=prefomi1;
+document.getElementById("event1").innerHTML=musice;
+document.getElementById("musici").innerHTML=musici3;
+
+
+}
+else if(montht=="Mar"||montht=="Aug"){
+ 
+
+
+ for (var i = 0; i < x.length; ++i) {
+ if(i==23){
+   x[i].style.backgroundColor="maroon";
+ }
+ else if(i==2){
+   x[i].style.backgroundColor="green";
+ }
+ }
+ document.getElementById("event1").innerHTML=musice;
+ document.getElementById("musici").innerHTML=musici2;
+ 
+ document.getElementById("event2").innerHTML=fill;
+ document.getElementById("filli").innerHTML=filli;
+ }
+ else if(montht=="Dec"||montht=="Nov"){
+ 
+
+
+ for (var i = 0; i < x.length; ++i) {
+ if(i==12){
+   x[i].style.backgroundColor="maroon";
+ }
+ else if(i==17){
+   x[i].style.backgroundColor="green";
+ }
+ }
+ 
+ document.getElementById("event1").innerHTML=musice;
+ document.getElementById("musici").innerHTML=musici2;
+ 
+ document.getElementById("event2").innerHTML=fill;
+ document.getElementById("filli").innerHTML=filli;
+ }
+ else if(montht=="Oct"||montht=="Sep"){
+ 
+
+
+ for (var i = 0; i < x.length; ++i) {
+ if(i==1){
+   x[i].style.backgroundColor="purple";
+ }
+ else if(i==14){
+   x[i].style.backgroundColor="maroon";
+ }
+ }
+ document.getElementById("event1").innerHTML=prefom;
+ document.getElementById("preformi").innerHTML=prefomi1;
+
+ document.getElementById("event2").innerHTML=fill;
+ document.getElementById("filli").innerHTML=filli;
+
+
+
+
+
+ 
+ 
+ 
+ }
+
+
+}
+
+
+
+</script>
+
+</body>
+
+<html>
